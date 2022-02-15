@@ -1,0 +1,30 @@
+.mat-toolbar-row-class {
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-areas: 'title button';
+  height: 100%;
+  width: 100%;
+}
+
+.header-content {
+  display: flex;
+  max-width: 100%;
+  width: 100%;
+}
+
+.button {
+  color: blue;
+  height: 4rem;
+  width: 4rem;
+  border: 1px solid;
+  border-radius: 50%;
+  font-size: 150%;
+  justify-self: center;
+}
+
+.title {
+  text-align: center;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0 5%;
+}

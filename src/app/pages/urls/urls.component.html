@@ -1,0 +1,40 @@
+<div class="container">
+
+    <app-header class="header-content"></app-header>
+  
+  
+    <body class="main">
+
+        <div class="card">
+        
+            <div class="card-content">
+
+                <div *ngFor="let url of urls" class="list-item">
+                    <div class="line">
+                        <ul  class="separator ">
+                            <li class="row">
+                                <div class="key"> Url Original</div>
+                                <a href="{{url.originalUrl}}" target="_blank" class="value"> {{url.originalUrl}}</a>
+                            </li>
+                            <hr>
+                            <li class="row">
+                                <div class="key"> Url Encurtada</div>
+                                <a href="{{url.shortenedUrl}}" target="_blank" class="value"> {{url.shortenedUrl}}</a>
+                            </li>
+                        </ul >
+                        <button class="line-statistics">
+                            Estatísticas
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <app-pagination [data]="{numberOfPages: pages, currentPage: page}" (newPageSelectedEvent)="test($event)"></app-pagination>
+
+        </div>
+
+    </body>
+  
+  </div>

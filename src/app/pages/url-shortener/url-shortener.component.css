@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  height: 80%;
+  width: 100%;
+  align-self: center;
+}
+
+form {
+  width: 100%;
+  display: contents;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.original-url {
+  border-radius: 1%;
+  height: 4rem;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+}
+
+.url {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-control {
+  height: 100%;
+}
+
+.button-17 {
+  height: 100%;
+  padding-top: 10%;
+  background-color: #abf400;
+  border-color: #abf400;
+}
+
+.shortened-url {
+  background-color: white;
+  display: flex;
+  border: 2px dashed black;
+  width: 80%;
+  justify-content: center;
+  margin: 0 4px;
+  margin-top: 3px;
+}
+
+.show-shortened-url {
+  padding: 1% 0;
+  text-align: center;
+  background-color: white;
+  color: red;
+  width: 98%;
+}
+
+.button-copy {
+  max-height: 50%;
+  height: 50%;
+  max-width: 2%;
+  width: 2%;
+  align-self: flex-end;
+}

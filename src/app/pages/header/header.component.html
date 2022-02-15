@@ -1,0 +1,21 @@
+<header class="header-content">
+    <mat-toolbar color="primary">
+
+      <mat-toolbar-row class="mat-toolbar-row-class">
+        <div class="empty"></div>
+        <div class="title" (click)="header()">
+          <div >Encurtador de url</div>
+          <div>{{userName}}</div>
+        </div>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="button">{{userName[0]}}</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Perfil</button>
+          <button mat-menu-item (click)="myUrls()">Minhas urls</button>
+          <button mat-menu-item (click)="users()">Usuários</button>
+          <button mat-menu-item (click)="logout()">Sair</button>
+        </mat-menu>
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+</header>

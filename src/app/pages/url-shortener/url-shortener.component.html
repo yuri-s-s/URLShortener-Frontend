@@ -1,0 +1,29 @@
+<div class="container">
+
+    <div class="form">
+        <form [formGroup]="urlForm" (ngSubmit)="onSubmit()">
+            
+                <div class="original-url">
+                    <div class="form-group url" >
+
+                        <input type="name" formControlName="url" name="name" class="form-control">
+                    </div>
+
+                    <div class="submit">
+                        <button type="submit" class="button-17">
+                            Encurtar
+                        </button>
+                    </div>
+                </div>
+
+        </form>
+        <div class="shortened-url" *ngIf="change">
+
+            <span class="show-shortened-url"> {{shortenerUrl}}</span> 
+            <button class="button-copy" (click)="copy(shortenerUrl)"></button>
+        </div>
+
+    </div>
+
+
+</div>

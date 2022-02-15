@@ -1,0 +1,44 @@
+.container {
+  display: grid;
+  grid-template-areas:
+    'text-center'
+    'form';
+  grid-template-rows: 15% 85%;
+  min-width: 100%;
+  min-height: 100%;
+  align-items: center;
+}
+
+.text-center {
+  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 !important;
+  font-weight: bold;
+}
+
+.form {
+  padding: 10%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.label-input {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  padding-top: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

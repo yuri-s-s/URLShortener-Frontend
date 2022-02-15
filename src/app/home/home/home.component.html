@@ -1,0 +1,56 @@
+<div class="main-container">
+
+    <div class="info">
+
+        <img class="img-responsive" src="assets/shorturl-icon.png">
+
+    </div>
+
+
+    <div class="main">
+
+        <div class="empty"></div>
+
+        <div class="main-credentials">
+            <div class="empty"></div>
+
+            <div class="credentials">
+
+                <div *ngIf="login" class="credentials-container">
+                    <app-login>
+
+                    </app-login>
+                </div>
+
+
+                <div *ngIf="!login" class="credentials-container">
+
+                    <app-register>
+
+                    </app-register>
+                </div>
+            </div>
+
+            <div class="empty"></div>
+        </div>
+
+        <div class="main-change">
+
+            <div class="change">
+                <button *ngIf="login" (click)="changeComponent()">
+                    <span>
+                        Click aqui para fazer se cadastrar.
+                    </span>
+                </button>
+
+                <button *ngIf="!login" (click)="changeComponent()">
+                    <span>
+                        Click aqui para fazer o login.
+                    </span>
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>

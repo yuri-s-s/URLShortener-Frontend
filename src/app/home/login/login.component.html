@@ -1,0 +1,33 @@
+<div class="container">
+
+
+    <div class="text-center">
+        <h1>Login</h1>
+    </div>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="authenticate()">
+        <div class="form">
+
+            <div class="form-group">
+                <label for="email" class="label-input">Email</label>
+                <input type="text" formControlName="email" name="email" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="label-input">Senha</label>
+                <input type="password" formControlName="password" name="password" class="form-control">
+            </div>
+
+
+            <div class="login">
+                <app-button 
+                    [label]="'Login'"
+                >
+                </app-button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
