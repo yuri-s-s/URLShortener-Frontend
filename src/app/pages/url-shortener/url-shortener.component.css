@@ -39,9 +39,10 @@ form {
 
 .button-17 {
   height: 100%;
-  padding-top: 10%;
-  background-color: #abf400;
-  border-color: #abf400;
+  background-color: #b0cbfd;
+  border-color: #b0cbfd;
+  color: #4d3e0f;
+  font-weight: bold;
 }
 
 .shortened-url {

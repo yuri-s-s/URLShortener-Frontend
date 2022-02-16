@@ -1,0 +1,59 @@
+.container {
+  display: grid;
+  grid-template-areas: 'header-content' 'main';
+  grid-template-rows: 6rem 88%;
+  max-height: 100%;
+  min-height: 100%;
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.header-content {
+  display: flex;
+}
+
+.main {
+  background-color: #3f51b5;
+  display: grid;
+  justify-content: center;
+  border: 1px solid #abf400;
+  border-radius: 2%;
+  margin: 2% 5% 3% 5%;
+  height: auto;
+  grid-template-columns: 50% 50%;
+}
+
+.line {
+  display: flex;
+  color: white;
+}
+
+.value {
+  color: white;
+  word-wrap: break-word;
+  max-width: 100%;
+  font-size: 15px;
+}
+
+.row {
+  max-width: 90%;
+  padding: 5px;
+}
+
+.key {
+  font-size: 18px;
+  text-align: center;
+}
+
+.separator {
+  max-width: 90%;
+}
+
+.chart {
+  width: 96%;
+  height: 96%;
+  display: block;
+  align-self: center;
+  justify-self: center;
+  border-radius: 1%;
+}

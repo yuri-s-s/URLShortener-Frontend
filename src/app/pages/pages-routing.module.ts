@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PageHomeComponent } from './page-home/page-home.component';
+import { UrlDetailsComponent } from './url-details/url-details.component';
 import { UrlsComponent } from './urls/urls.component';
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: "urls",
     component: UrlsComponent
+  },
+  {
+    path: "urls/url/:url",
+    component: UrlDetailsComponent
   }
 ];
 
@@ -18,4 +23,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AdminRoutingModule { }
+export class PageRoutingModule { }

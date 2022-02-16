@@ -8,6 +8,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './core/utils/jwt.interceptors';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { JwtInterceptor } from './core/utils/jwt.interceptors';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    HighchartsChartModule
+
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],
   bootstrap: [AppComponent]

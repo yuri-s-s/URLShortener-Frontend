@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/core/services/localStorage.service';
 import { UrlShortenerService } from 'src/app/shared/services/url-shortener.service';
 
@@ -15,7 +16,7 @@ export class UrlsComponent implements OnInit {
 
   pages: number = 0;
 
-  constructor(public urlShortenerService :UrlShortenerService, private localStorage: LocalStorageService) { }
+  constructor(public urlShortenerService :UrlShortenerService, private localStorage: LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -47,6 +48,11 @@ export class UrlsComponent implements OnInit {
   test(event: number) {
     this.page = event;
     this.getUrlList()
+  }
+
+  details(shortenedUrl: string) {
+    console.log(shortenedUrl.split("short/")[1])
+    this.router.navigate([`admin/urls/url/${shortenedUrl.split("short/")[1]}`]);
   }
 
 }

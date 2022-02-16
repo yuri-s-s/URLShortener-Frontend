@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
-import { AdminRoutingModule } from './pages-routing.module';
+import { PageRoutingModule } from './pages-routing.module';
 import { PageHomeComponent } from './page-home/page-home.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -11,6 +11,9 @@ import { UrlShortenerComponent } from './url-shortener/url-shortener.component';
 import { UrlsComponent } from './urls/urls.component';
 import { HeaderComponent } from './header/header.component';
 import { PaginationComponent } from '../shared/components/pagination/pagination.component';
+import { UrlDetailsComponent } from './url-details/url-details.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+
 
 
 @NgModule({
@@ -20,16 +23,18 @@ import { PaginationComponent } from '../shared/components/pagination/pagination.
     UrlShortenerComponent,
     UrlsComponent,
     HeaderComponent,
-    PaginationComponent
+    PaginationComponent,
+    UrlDetailsComponent,
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule,
+    PageRoutingModule,
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HighchartsChartModule,
   ]
 })
-export class AdminModule { }
+export class PageModule { }

@@ -30,4 +30,9 @@ export class UrlShortenerService {
 
     return this.httpClient.get<any>(this.baseUrl + "api/url/user/" + id + "?page=" + page + "&pageSize=8" );
   }
+
+  public urlDetails(urlId: any): Observable<any> {
+
+    return this.httpClient.get<any>(this.baseUrl + "api/short/" + urlId + "/statistics");
+  }
 }

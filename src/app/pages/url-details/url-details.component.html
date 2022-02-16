@@ -1,0 +1,37 @@
+<div class="container">
+
+    <app-header class="header-content"></app-header>
+  
+  
+    <body class="main">
+
+        <div class="line">
+            <ul class="separator">
+                <li class="row">
+                    <div class="key"> Url Original</div>
+                    <a href="{{originalUrl}}" target="_blank" class="value"> {{originalUrl}}</a>
+                </li>
+                <hr>
+                <li class="row">
+                    <div class="key"> Url Encurtada</div>
+                    <a href="{{shortenedUrl}}" target="_blank" class="value"> {{shortenedUrl}}</a>
+                </li>
+                <hr>
+
+                <li class="row">
+                    <div class="key"> Total de clicks</div>
+                    <p class="value"> {{clicksQtd}}</p>
+                </li>
+            </ul >
+
+        </div>
+
+        <highcharts-chart class="chart"
+            [Highcharts] = "highcharts" 
+            [options] = "chartOptions" 
+            >
+        </highcharts-chart>
+
+
+    </body>
+</div>

@@ -22,8 +22,8 @@
                                 <a href="{{url.shortenedUrl}}" target="_blank" class="value"> {{url.shortenedUrl}}</a>
                             </li>
                         </ul >
-                        <button class="line-statistics">
-                            Estatísticas
+                        <button class="line-statistics" (click)="details(url.shortenedUrl)">
+                            Detalhes
                         </button>
 
                     </div>
