@@ -9,12 +9,12 @@
             <ul class="separator">
                 <li class="row">
                     <div class="key"> Url Original</div>
-                    <a href="{{originalUrl}}" target="_blank" class="value"> {{originalUrl}}</a>
+                    <a [href]="originalUrl | safeUrl: ''" target="_blank" class="value"> {{originalUrl}}</a>
                 </li>
                 <hr>
                 <li class="row">
                     <div class="key"> Url Encurtada</div>
-                    <a href="{{shortenedUrl}}" target="_blank" class="value"> {{shortenedUrl}}</a>
+                    <a [href]="shortenedUrl | safeUrl: ''" target="_blank" class="value"> {{shortenedUrl}}</a>
                 </li>
                 <hr>
 

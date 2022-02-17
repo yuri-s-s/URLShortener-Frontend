@@ -14,6 +14,8 @@ export class UrlShortenerComponent implements OnInit {
 
   shortenerUrl!: string;
 
+  originalUrl!: string;
+  
   change: boolean = false;
 
   constructor( public urlShortenerService :UrlShortenerService, private formBuilder: FormBuilder, private localStorage: LocalStorageService) { }
@@ -35,6 +37,7 @@ export class UrlShortenerComponent implements OnInit {
       (data) => {
 
         this.shortenerUrl = data.shortenedUrl;
+        this.originalUrl = data.originalUrl;
         this.change = true;
       }
     );
@@ -50,6 +53,13 @@ export class UrlShortenerComponent implements OnInit {
     document.addEventListener("copy", listener);
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
+  }
+
+  newShort(){
+    this.change = false;
+    this.shortenerUrl = "";
+    this.originalUrl = "";
+    this.urlForm.reset();
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UrlShortenerService } from 'src/app/shared/services/url-shortener.service';
 import * as Highcharts from 'highcharts';
+import * as dayjs from 'dayjs';
 
 @Component({
   selector: 'app-url-details',
@@ -42,7 +43,9 @@ export class UrlDetailsComponent implements OnInit {
 
           const date = new Date(c["createdAt"]);
 
-          return `${date.getDate()} of ${date.getMinutes() + 1}`;
+          console.log(dayjs(c["createdAt"]).format("DD/MM/YYYY"))
+
+          return dayjs(c["createdAt"]).format("DD/MM/YYYY");
 
         })
 

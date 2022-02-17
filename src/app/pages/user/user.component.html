@@ -1,0 +1,46 @@
+<div class="container">
+
+    <app-header class="header-content"></app-header>
+  
+  
+    <body class="main">
+
+
+        <div class="user-card">
+            <div class="title">Perfil</div>
+            <div class="form">
+                <form [formGroup]="userForm" *ngIf="this.userForm" (ngSubmit)="edit()">
+                    
+                        <div class="name">
+                            <div class="form-group" >
+                                <span class="key">Nome</span>
+                                <input type="name" formControlName="name" name="name" class="form-control">
+                            </div>
+
+                        </div>
+
+                        <div class="name">
+                            <div class="form-group" >
+                                <span class="key">Email</span>
+                                <input readonly="readonly" type="name" formControlName="email" name="name" class="form-control">
+                            </div>
+
+                        </div>
+
+                        <div class="submit">
+                            <button type="submit" class="button-17">
+                                Editar
+                            </button>
+                        </div>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="password-card">
+            <div class="title">Alterar a senha</div>
+        </div>
+    
+
+    </body>
+</div>

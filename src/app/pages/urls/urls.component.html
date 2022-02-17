@@ -14,12 +14,12 @@
                         <ul  class="separator ">
                             <li class="row">
                                 <div class="key"> Url Original</div>
-                                <a href="{{url.originalUrl}}" target="_blank" class="value"> {{url.originalUrl}}</a>
+                                <a [href]="url.originalUrl | safeUrl: ''" target="_blank" class="value"> {{url.originalUrl}}</a>
                             </li>
                             <hr>
                             <li class="row">
                                 <div class="key"> Url Encurtada</div>
-                                <a href="{{url.shortenedUrl}}" target="_blank" class="value"> {{url.shortenedUrl}}</a>
+                                <a [href]="url.shortenedUrl | safeUrl: ''" target="_blank" class="value"> {{url.shortenedUrl}}</a>
                             </li>
                         </ul >
                         <button class="line-statistics" (click)="details(url.shortenedUrl)">

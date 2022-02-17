@@ -1,6 +1,6 @@
 <div class="container">
 
-    <div class="form">
+    <div class="form" *ngIf="!change">
         <form [formGroup]="urlForm" (ngSubmit)="onSubmit()">
             
                 <div class="original-url">
@@ -17,11 +17,27 @@
                 </div>
 
         </form>
-        <div class="shortened-url" *ngIf="change">
 
-            <span class="show-shortened-url"> {{shortenerUrl}}</span> 
-            <button class="button-copy" (click)="copy(shortenerUrl)"></button>
+    </div>
+    <div class="shortened-url" *ngIf="change">
+        <div class="shortened-url-info">
+            
+            <div class="main-original-url-content">
+                <span class="key"> Url Original: </span> 
+                <span class="show-url"> {{originalUrl}}</span> 
+
+            </div>
+
+            <div class="main-shortener-url-content">
+                <span class="key"> Url Encurtada: </span> 
+                <span class="show-url"> {{shortenerUrl}}</span> 
+
+                <div class="submit">
+                    <button class="button-copy" (click)="copy(shortenerUrl)">Copiar</button>
+                </div>
+            </div>
         </div>
+        <button class="new-short" (click)="newShort()">Encurtar novamente</button>
 
     </div>
 
