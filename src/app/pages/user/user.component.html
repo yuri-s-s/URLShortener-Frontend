@@ -39,6 +39,41 @@
 
         <div class="password-card">
             <div class="title">Alterar a senha</div>
+            <div class="password-card-container">
+                <form [formGroup]="passwordForm" *ngIf="this.userForm" (ngSubmit)="changePassword()" class="password-card-form">
+                    
+                        <div class="form-password">
+                            <div class="form-group" >
+                                <span class="key">Senha antiga</span>
+                                <input type="password" formControlName="password" name="name" class="form-password-input">
+                            </div>
+
+                        </div>
+
+                        <div class="form-password">
+                            <div class="form-group" >
+                                <span class="key">Nova senha</span>
+                                <input type="password" formControlName="newPassword" name="name" class="form-password-input">
+                            </div>
+
+                        </div>
+
+                        <div class="form-password">
+                            <div class="form-group" >
+                                <span class="key">Repita a nova senha</span>
+                                <input type="password" formControlName="newPasswordRepeat" name="name" class="form-password-input">
+                            </div>
+
+                        </div>
+
+                        <div class="submit-password">
+                            
+                            <button type="submit" class="button-17">
+                                Alterar
+                            </button>
+                        </div>
+                </form>
+            </div>
         </div>
     
 

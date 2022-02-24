@@ -9,6 +9,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { JwtInterceptor } from './core/utils/jwt.interceptors';
 import { HighchartsChartModule } from 'highcharts-angular';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,11 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar: true
+    })
 
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },],

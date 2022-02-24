@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { LocalStorageService } from 'src/app/core/services/localStorage.service';
 import { UserService } from 'src/app/shared/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-user',
@@ -11,15 +11,22 @@ import { UserService } from 'src/app/shared/services/user.service';
 })
 export class UserComponent implements OnInit {
 
-  userForm!: FormGroup;
+  userForm: FormGroup = new FormGroup({
+    name: new FormControl(),
+    email: new FormControl(),
+  
+    });
+
+  passwordForm: FormGroup =new FormGroup({
+    password: new FormControl(),
+    newPassword: new FormControl(),
+    newPasswordRepeat: new FormControl(),
+  
+    });
 
   userId!: string;
 
-  name!: string;
-
-  email!: string;
-
-  constructor(private localStorage: LocalStorageService, public userService : UserService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private toastr: ToastrService, private localStorage: LocalStorageService, public userService : UserService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -30,8 +37,6 @@ export class UserComponent implements OnInit {
     ).subscribe(
       (data) => {
 
-        this.name = data.name;
-        this.email = data.email;
 
         this.userForm = this.formBuilder.group({
           name: [data.name],
@@ -54,18 +59,49 @@ export class UserComponent implements OnInit {
     ).subscribe(
       (data) => {
 
-        this.name = data.name;
-        this.email = data.email;
-
         this.userForm = this.formBuilder.group({
           name: [data.name],
           email: [data.email],
         })
 
         this.localStorage.set("name", data.name)
-
+        window.location.reload();
       }
     );
+  }
+
+  changePassword(){
+    this.userId = this.localStorage.get("id");
+
+    const oldPassword: String = this.passwordForm.get("password")?.value;
+    const newPassword: String = this.passwordForm.get("newPassword")?.value;
+    const repeatNewPassword: String = this.passwordForm.get("newPasswordRepeat")?.value;
+
+    if (newPassword !== repeatNewPassword) {
+      this.toastr.error("As senhas não conferem!");
+    }else {
+
+      this.userService.changePassword(
+        this.userId,
+        {
+          "password": oldPassword,
+          "newPassword": newPassword,
+        }
+      ).subscribe( {
+
+        next: () => {
+          this.toastr.success("Senha alterada com sucesso!");
+          this.passwordForm.reset();
+        },
+
+        error: (e) => {
+
+          this.toastr.error("Não foi possível alterar a senha!");
+
+        }
+      
+      });
+    }
   }
 
 }

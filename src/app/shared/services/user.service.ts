@@ -30,4 +30,11 @@ export class UserService {
     body
     );
   }
+
+  public changePassword(userId: string, body: any): Observable<any> {
+
+    return this.httpClient.put<any>(this.baseUrl + "api/user/" + userId + "/changePassword",
+    body
+    );
+  }
 }

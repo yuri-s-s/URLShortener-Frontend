@@ -82,3 +82,31 @@ form {
   color: #4d3e0f;
   font-weight: bold;
 }
+
+.password-card-container {
+  display: flex;
+  align-items: center;
+}
+
+.password-card-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: 0% 5% 0 5%;
+}
+
+.form-password {
+  width: 60%;
+}
+
+.form-password-input {
+  width: 90%;
+}
+
+.submit-password {
+  display: flex;
+  height: 4rem;
+  margin-top: 0.5rem;
+  align-items: center;
+}
