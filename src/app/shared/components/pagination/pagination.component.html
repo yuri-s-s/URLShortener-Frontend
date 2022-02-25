@@ -2,16 +2,12 @@
     <div class="page-choose-box">
 
       <div class="page-choose" (click)="selectNewPage(page)" *ngFor="let page of pageList; let i = index">
-        
-        <div *ngIf="page == 0" class="page-choose-item">
-          ...
-        </div>
 
-        <div *ngIf="page > 0 && page == currentPage" class="page-choose-item selected-background">
+        <div *ngIf="page == this.currentPage" class="page-choose-item selected-background">
           {{ page }}
         </div>
 
-        <div *ngIf="page > 0 && page != currentPage" class="page-choose-item">
+        <div *ngIf="page != this.currentPage" class="page-choose-item">
           {{ page }}
         </div>
 

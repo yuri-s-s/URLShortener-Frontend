@@ -15,6 +15,7 @@ import { UrlDetailsComponent } from './url-details/url-details.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { SafeUrlPipe } from '../core/services/safe-url.pipe';
 import { UserComponent } from './user/user.component';
+import { UsersComponent } from './users/users.component';
 
 
 
@@ -28,7 +29,8 @@ import { UserComponent } from './user/user.component';
     PaginationComponent,
     UrlDetailsComponent,
     SafeUrlPipe,
-    UserComponent
+    UserComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

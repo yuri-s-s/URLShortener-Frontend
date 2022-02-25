@@ -4,6 +4,7 @@ import { PageHomeComponent } from './page-home/page-home.component';
 import { UrlDetailsComponent } from './url-details/url-details.component';
 import { UrlsComponent } from './urls/urls.component';
 import { UserComponent } from './user/user.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: "user",
     component: UserComponent
+  },
+  {
+    path: "users",
+    component: UsersComponent
   },
   {
     path: "urls/url/:url",

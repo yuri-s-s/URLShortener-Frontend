@@ -17,6 +17,10 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
+  public getAll(page: number): Observable<any> {
+
+    return this.httpClient.get<any>(this.baseUrl + "api/user" + "?page=" + page + "&pageSize=8" );
+  }
 
   public getById(userId: string): Observable<any> {
 

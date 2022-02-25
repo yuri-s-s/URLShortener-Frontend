@@ -1,0 +1,38 @@
+<div class="container">
+
+    <app-header class="header-content"></app-header>
+  
+  
+    <body class="main">
+        <div class="card">
+            <div class="card-content">
+
+                <div *ngFor="let user of users" class="list-item">
+                    <div class="line">
+                        <ul  class="separator ">
+                            <li class="row">
+                                <div class="key"> Nome</div>
+                                <a class="value"> {{user.name}}</a>
+                            </li>
+                            <hr>
+                            <li class="row">
+                                <div class="key"> Email</div>
+                                <a class="value"> {{user.email}}</a>
+                            </li>
+                        </ul >
+                        <button class="line-statistics" >
+                            Detalhes
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <app-pagination [data]="{numberOfPages: pages, currentPage: page}" (newPageSelectedEvent)="test($event)"></app-pagination>
+
+        </div>
+
+    </body>
+  
+  </div>

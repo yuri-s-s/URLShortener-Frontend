@@ -16,7 +16,7 @@ export class UrlsComponent implements OnInit {
 
   pages: number = 0;
 
-  constructor(public urlShortenerService :UrlShortenerService, private localStorage: LocalStorageService, private router: Router) { }
+  constructor(public urlShortenerService: UrlShortenerService, private localStorage: LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -40,7 +40,8 @@ export class UrlsComponent implements OnInit {
       (data) => {
 
         this.urls = data.urls;
-
+        this.page = data.page;
+        this.pages = data.pages;
       }
     );
   }
