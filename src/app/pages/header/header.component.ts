@@ -11,28 +11,33 @@ export class HeaderComponent implements OnInit {
 
   userName!: string;
 
+  isAdmin: boolean = false;
 
   constructor(private localStorage: LocalStorageService, private router: Router) { }
 
   ngOnInit(): void {
     this.userName = this.localStorage.get("name");
+
+    const roles = this.localStorage.get("roles");
+    this.isAdmin = roles.includes("ROLE_ADMIN") ? true : false;
+
   }
 
   myUrls() {
-    this.router.navigate(['admin/urls']);
+    this.router.navigate(['shortener/urls']);
   }
 
   users() {
-    this.router.navigate(['admin/users']);
+    this.router.navigate(['shortener/users']);
   }
 
   user() {
-    this.router.navigate(['admin/user']);
+    this.router.navigate(['shortener/user']);
   }
 
 
   header() {
-    this.router.navigate(['admin']);
+    this.router.navigate(['shortener']);
   }
 
   logout() {

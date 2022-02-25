@@ -41,10 +41,6 @@ export class UrlDetailsComponent implements OnInit {
 
         clicks = data.clicks.map( (c: any) => {
 
-          const date = new Date(c["createdAt"]);
-
-          console.log(dayjs(c["createdAt"]).format("DD/MM/YYYY"))
-
           return dayjs(c["createdAt"]).format("DD/MM/YYYY");
 
         })

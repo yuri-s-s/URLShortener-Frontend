@@ -37,17 +37,9 @@
         <div class="main-change">
 
             <div class="change">
-                <button *ngIf="login" (click)="changeComponent()">
-                    <span>
-                        Click aqui para fazer se cadastrar.
-                    </span>
-                </button>
+                <app-button [label]="'Click aqui para fazer se cadastrar'" *ngIf="login" (click)="changeComponent()"></app-button>
 
-                <button *ngIf="!login" (click)="changeComponent()">
-                    <span>
-                        Click aqui para fazer o login.
-                    </span>
-                </button>
+                <app-button [label]="'Click aqui para fazer o login'" *ngIf="!login" (click)="changeComponent()"></app-button>
 
             </div>
         </div>

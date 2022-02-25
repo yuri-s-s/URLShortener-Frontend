@@ -51,8 +51,8 @@ export class UrlsComponent implements OnInit {
   }
 
   details(shortenedUrl: string) {
-    console.log(shortenedUrl.split("short/")[1])
-    this.router.navigate([`admin/urls/url/${shortenedUrl.split("short/")[1]}`]);
+
+    this.router.navigate([`shortener/urls/url/${shortenedUrl.split("short/")[1]}`]);
   }
 
 }

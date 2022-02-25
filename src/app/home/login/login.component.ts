@@ -49,14 +49,7 @@ export class LoginComponent implements OnInit {
           timeOut: 1000
         });
 
-        if(Array<string>(data.roles).toString().includes("ROLE_ADMIN")){
-
-          this.router.navigate(['admin']);
-
-        }else {
-
-          this.router.navigate(['standard']);
-        }
+          this.router.navigate(['shortener']);
 
       },
       

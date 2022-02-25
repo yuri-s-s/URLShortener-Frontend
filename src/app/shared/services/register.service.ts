@@ -20,7 +20,7 @@ export class RegisterService {
 
   public register(body: any): Observable<any> {
 
-    return this.httpClient.post<any>(this.baseUrl + "api/user",
+    return this.httpClient.post<any>(this.baseUrl + "api/register",
       body
     );
   }

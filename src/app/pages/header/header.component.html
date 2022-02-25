@@ -12,7 +12,7 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item (click)="user()">Perfil</button>
           <button mat-menu-item (click)="myUrls()">Minhas urls</button>
-          <button mat-menu-item (click)="users()">Usuários</button>
+          <button mat-menu-item *ngIf="isAdmin" (click)="users()">Usuários</button>
           <button mat-menu-item (click)="logout()">Sair</button>
         </mat-menu>
       </mat-toolbar-row>
