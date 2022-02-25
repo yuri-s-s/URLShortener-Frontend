@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { LocalStorageService } from 'src/app/core/services/localStorage.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -14,10 +16,14 @@ export class UsersComponent implements OnInit {
 
   pages: number = 0;
 
-  constructor(public userService: UserService) { }
+  userId!: string;
+
+  constructor(public userService: UserService, private toastr: ToastrService, private localStorage: LocalStorageService) { }
 
   ngOnInit(): void {
     
+    this.userId = this.localStorage.get("id");
+
     this.userService.getAll(
       this.page).subscribe(
       (data) => {
@@ -30,7 +36,7 @@ export class UsersComponent implements OnInit {
 
   }
 
-  getUrlList(): void {
+  getUsersList(): void {
 
     this.userService.getAll(
       this.page).subscribe(
@@ -47,7 +53,21 @@ export class UsersComponent implements OnInit {
   test(event: number) {
 
     this.page = event;
-    this.getUrlList();
+    this.getUsersList();
+  }
+
+  remove(event: any) {
+
+    this.userService.remove(event.id).subscribe({
+
+      next: () => {
+        this.toastr.success("Usuário removido com sucesso!", '', {
+          timeOut: 2000
+        });
+
+        this.getUsersList();
+      }
+    })
   }
 
 }

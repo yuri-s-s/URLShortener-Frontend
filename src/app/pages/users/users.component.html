@@ -20,8 +20,8 @@
                                 <a class="value"> {{user.email}}</a>
                             </li>
                         </ul >
-                        <button class="line-statistics" >
-                            Detalhes
+                        <button class="line-remove" [disabled]="this.userId === user.id" (click)="remove(user)">
+                            Remover usuário
                         </button>
 
                     </div>

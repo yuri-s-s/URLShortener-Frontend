@@ -58,10 +58,10 @@
   grid-template-areas: 'line-content line-statistics';
 }
 
-.line-statistics {
+.line-remove {
   display: flex;
-  background-color: #b0cbfd;
-  border-color: #b0cbfd;
+  background-color: #fdb0b0;
+  border-color: #fdb0b0;
   color: #4d3e0f;
   font-weight: bold;
   align-items: center;

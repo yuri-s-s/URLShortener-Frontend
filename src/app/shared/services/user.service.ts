@@ -28,6 +28,13 @@ export class UserService {
     );
   }
 
+  public remove(userId: string): Observable<any> {
+
+    return this.httpClient.delete<any>(this.baseUrl + "api/user/" + userId,
+    );
+  }
+
+
   public edit(userId: string, body: any): Observable<any> {
 
     return this.httpClient.put<any>(this.baseUrl + "api/user/" + userId,
