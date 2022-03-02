@@ -1,13 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UrlShortenerService {
 
-  baseUrl = "http://localhost:8080/";
+  baseUrl = environment.apiUrl + "api/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -21,18 +22,18 @@ export class UrlShortenerService {
 
   public create(id: number, body: any): Observable<any> {
 
-    return this.httpClient.post<any>(this.baseUrl + "api/url/user/" + id,
+    return this.httpClient.post<any>(this.baseUrl + "url/user/" + id,
       body
     );
   }
 
   public getAllByUser(id: number, page: number): Observable<any> {
 
-    return this.httpClient.get<any>(this.baseUrl + "api/url/user/" + id + "?page=" + page + "&pageSize=8" );
+    return this.httpClient.get<any>(this.baseUrl + "url/user/" + id + "?page=" + page + "&pageSize=8" );
   }
 
   public urlDetails(urlId: any): Observable<any> {
 
-    return this.httpClient.get<any>(this.baseUrl + "api/short/" + urlId + "/statistics");
+    return this.httpClient.get<any>(this.baseUrl + "short/" + urlId + "/statistics");
   }
 }
